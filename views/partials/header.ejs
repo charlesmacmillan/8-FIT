@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>8FIT</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500&display=swap');
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <nav>
+        <span id="nav-logo">
+          <h1>8FIT</h1>
+          <img src="https://i.imgur.com/NRWD0Hc.png" id="dumbbell" />
+        </span>
+        <a href="/users">Home</a>
+        <a href="">Profile</a>
+        <span id="login">
+          <% if (user) { %>
+          <a href="/logout">Log Out</a>
+          <% } else { %>
+          <a href="/auth/google">Login with Google</a>
+          <% } %>
+        </span>
+      </nav>
+    </header>
+  </body>
+</html>

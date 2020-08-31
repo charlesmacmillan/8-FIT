@@ -39,12 +39,13 @@ header nav {
 }
 
 .box {
-margin: 10px;
+margin-top: 10px;
 }
 
 .profile-pic {
-  width: 50px;
-  
+  width: 75px;
+  border-radius: 50%;
+  border: 2px solid red;
 }
 
 footer {

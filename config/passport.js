@@ -22,6 +22,7 @@ passport.use(
             name: profile.displayName,
             email: profile.emails[0].value,
             googleId: profile.id,
+            avatar: profile.photos[0].value
           });
           newUser.save(function (err) {
             if (err) return cb(err);
@@ -34,12 +35,11 @@ passport.use(
 );
 
 passport.serializeUser(function (user, done) {
-    done(null, user.id);
+  done(null, user.id);
 });
 
 passport.deserializeUser(function (id, done) {
-    User.findById(id, function (err, user) {
-        done(err, user);
-    });
+  User.findById(id, function (err, user) {
+    done(err, user);
+  });
 });
-

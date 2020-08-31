@@ -18,8 +18,8 @@ const userSchema = new mongoose.Schema(
     name: String,
     email: String,
     avatar: String,
-    googleId: String,
-    workouts: [workoutSchema]
+    workouts: [workoutSchema],
+    googleId: String
   },
   {
     timestamps: true,

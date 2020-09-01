@@ -1,17 +1,25 @@
 body {
-  margin: 0;
-  padding: 50px;
+  margin: 0 50px;
+  /* padding: 50px; */
   color: white;
-  font-family: 'Orbitron', sans-serif;
+  font-family: "Orbitron", sans-serif;
   background-color: black;
 }
 
 a {
-  color: #00B7FF;
+  color: #00c0fa;
+}
+
+/* a:visited {
+  color: rgb(0, 51, 128);
+} */
+
+a:hover {
+  color: rgb(255, 60, 0);
 }
 
 header {
-  margin-bottom: 25px;
+  margin: 50px 0;
 }
 
 header nav {
@@ -45,7 +53,7 @@ header nav {
 }
 
 .box {
-margin-top: 10px;
+  margin: 15px 0;
 }
 
 .profile-pic {
@@ -61,5 +69,5 @@ footer {
   justify-content: flex-end;
   padding-bottom: 1%;
   height: 100px;
-  margin-top: auto;
+  margin-top: 10%;
 }

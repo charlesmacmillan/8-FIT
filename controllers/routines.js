@@ -7,7 +7,8 @@ module.exports = {
 
 function newRoutine(req, res, next) {
     User.findById(req.params.id, function (err, user) {
-        res.render('routine/new', { user });
+        console.log(user);
+        res.render('routines/new', { user });
     });
 }
 

@@ -3,6 +3,6 @@ const usersCtrl = require("../controllers/users");
 
 // GET /users
 router.get("/users", usersCtrl.index);
-router.get("/:id", usersCtrl.show);
+router.get("/users/:id", usersCtrl.show);
 
 module.exports = router;

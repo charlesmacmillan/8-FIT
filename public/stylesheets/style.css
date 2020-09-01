@@ -1,13 +1,17 @@
 body {
   margin: 0;
-  color: white;
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  color: white;
+  font-family: 'Orbitron', sans-serif;
   background-color: black;
 }
 
 a {
   color: #00B7FF;
+}
+
+header {
+  margin-bottom: 25px;
 }
 
 header nav {
@@ -24,7 +28,8 @@ header nav {
 }
 
 #dumbbell {
-  width: 100px;
+  width: 150px;
+  z-index: -1;
 }
 
 #nav-logo {
@@ -34,8 +39,9 @@ header nav {
 }
 
 #nav-logo h1 {
-  margin: 0;
-  color: rgb(129, 0, 0);
+  font-size: 1.3rem;
+  margin: 0 0 -32px;
+  color: rgb(189, 0, 0);
 }
 
 .box {
@@ -43,9 +49,9 @@ margin-top: 10px;
 }
 
 .profile-pic {
-  width: 75px;
+  width: 15%;
   border-radius: 50%;
-  border: 2px solid red;
+  border: 2px solid rgb(255, 255, 255);
 }
 
 footer {

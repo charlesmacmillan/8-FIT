@@ -1,11 +1,11 @@
 <%- include('../partials/header') %>
 
-<!-- display every user's name, img, and link to their profile (show page) -->
+
 <% users.forEach(function(u) { %>
 <div class="box">
   <img class="profile-pic" src="<%= u.avatar %>" />
   <p><%= u.name %></p>
   <a href="/users/<%= u._id %>">Profile</a>
-  <% }) %>
 </div>
+  <% }) %>
 <%- include('../partials/footer') %>

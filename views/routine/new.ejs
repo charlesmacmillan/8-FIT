@@ -1,0 +1,11 @@
+<%- include('../partials/header') %>
+
+<img class="profile-pic" src="<%= user.avatar %>" alt="profile pic" />
+<h1><%= user.name %></h1>
+<form action="/workouts" method="POST">
+    <input type="text" name="title" placeholder="routine name" />
+    <input type="text" name="description" placeholder="description"/>
+    <button type="submit">Add Workout</button>
+</form>
+
+<%- include('../partials/footer') %>

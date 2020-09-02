@@ -4,9 +4,7 @@
   <img class="profile-pic" src="<%= user.avatar %>" alt="profile pic" />
   <div class="inner-space">
     <h1><%= user.name %></h1>
-    <% if (locals.userId === user._id) { %>
     <a href="/routines/new">New Routine</a>
-    <% } %>
   </div>
 </div>
 

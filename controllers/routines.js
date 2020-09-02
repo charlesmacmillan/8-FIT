@@ -3,13 +3,21 @@ const Routine = require("../models/routine");
 
 module.exports = {
   new: newRoutine,
-  create,
+  show,
+  create
 };
 
-function newRoutine(req, res, next) {
+function newRoutine(req, res) {
   User.findById(req.params.id, function (err, user) {
     res.render("routines/new", user);
   });
+}
+
+function show(req, res) {
+    Routine.findById(req.params.id, function (err, routine) {
+        console.log('routine', routine);
+        res.render('routines/show', routine);
+    });
 }
 
 function create(req, res) {

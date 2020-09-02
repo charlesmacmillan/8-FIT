@@ -49,6 +49,10 @@ header nav {
   align-items: center;
 }
 
+.center {
+  justify-content: center;
+}
+
 .box {
   height: 150px;
   margin: 15px 0;

@@ -51,13 +51,25 @@ header nav {
   margin: 0 0 -32px;
   color: rgb(189, 0, 0);
 }
-
+.flex {
+  display: flex;
+  align-items: center;
+}
 .box {
+  height: 150px;
   margin: 15px 0;
+  padding: 15px;
+  /* background: linear-gradient(to left, black 10%, rgba(255, 255, 255, 0.336)); */
+  border-top-left-radius: 150px;
+  border-bottom-left-radius: 150px;
+}
+.inner-space {
+  margin-left: 15px;
+
 }
 
 .profile-pic {
-  width: 15%;
+  width: 150px;
   border-radius: 50%;
   border: 2px solid rgb(255, 255, 255);
 }

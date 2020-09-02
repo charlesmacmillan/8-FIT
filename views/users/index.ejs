@@ -2,10 +2,12 @@
 
 
 <% users.forEach(function(u) { %>
-<div class="box">
+<div class="box flex">
   <img class="profile-pic" src="<%= u.avatar %>" />
-  <p><%= u.name %></p>
-  <a href="/users/<%= u._id %>">Profile</a>
+  <div class="inner-space">
+  <h2><%= u.name %></h2>
+  <a href="/users/<%= u._id %>">View Profile</a>
+  </div>
 </div>
   <% }) %>
 <%- include('../partials/footer') %>

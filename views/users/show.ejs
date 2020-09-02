@@ -1,8 +1,12 @@
 <%- include('../partials/header') %>
 
+<div class="flex box">
+
 <img class="profile-pic" src="<%= user.avatar %>" alt="profile pic" />
+<div class="inner-space">
 <h1><%= user.name %></h1>
 <a href="/routines/new">New Routine</a>
-
+</div>
+</div>
 <%- include('../partials/footer') %>
 

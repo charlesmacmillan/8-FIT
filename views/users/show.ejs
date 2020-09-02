@@ -1,12 +1,23 @@
 <%- include('../partials/header') %>
 
 <div class="flex box">
-
-<img class="profile-pic" src="<%= user.avatar %>" alt="profile pic" />
-<div class="inner-space">
-<h1><%= user.name %></h1>
-<a href="/routines/new">New Routine</a>
+  <img class="profile-pic" src="<%= user.avatar %>" alt="profile pic" />
+  <div class="inner-space">
+    <h1><%= user.name %></h1>
+    <% if (locals.userId === user._id) { %>
+    <a href="/routines/new">New Routine</a>
+    <% } %>
+  </div>
 </div>
-</div>
-<%- include('../partials/footer') %>
 
+<% if (routines) { %>
+<div class="flex">
+  <% routines.forEach(function(r) { %>
+  <div class="routine">
+    <h2 style="text-decoration: underline; margin: 0"><%= r.title %></h2>
+    <p style="font-size: 12px"><%= r.description %></p>
+    <a href="/exercise/new">Add Exercise</a>
+  </div>
+  <% }) %>
+</div>
+<% } %> <%- include('../partials/footer') %>

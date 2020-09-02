@@ -1,5 +1,6 @@
 
 const User = require('../models/user');
+const Routine = require('../models/routine');
 
 module.exports = {
     index,
@@ -21,7 +22,10 @@ function index(req, res, next) {
 
 function show(req, res) {
     User.findById(req.params.id, function (err, user) {
-        res.render('users/show', { user });
+        console.log(user);
+        Routine.find({ user: user._id }, function (err, routines) {
+            res.render('users/show', { user, routines });            
+        })
     });
 }
 

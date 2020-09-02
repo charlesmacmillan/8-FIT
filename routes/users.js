@@ -9,6 +9,7 @@ function isLoggedIn(req, res, next) {
     console.log('user:  ', req.user);
     if (req.isAuthenticated()) {
         res.locals.userId = req.user._id;
+        console.log(res.locals.userId);
         return next();
     } else {
         res.redirect('/auth/google');

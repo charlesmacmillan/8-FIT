@@ -2,7 +2,7 @@ const router = require("express").Router();
 const routinesCtrl = require("../controllers/routines");
 
 router.get('/routines/new', isLoggedIn, routinesCtrl.new);
-router.post('users/:id/routines', isLoggedIn, routinesCtrl.create);
+router.post('/users/:id/routines', isLoggedIn, routinesCtrl.create);
 
 function isLoggedIn(req, res, next) {
     if (req.isAuthenticated()) {

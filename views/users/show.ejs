@@ -11,7 +11,7 @@
 <% if (routines) { %>
 <div class="flex center">
   <% routines.forEach(function(r) { %>
-  <div class="routine">
+  <div class="routine center-text">
     <h2 style="text-decoration: underline; margin: 0"><%= r.title %></h2>
     <p style="font-size: 12px"><%= r.description %></p>
     <a href="/routines/<%= r._id %>">View Routine</a>

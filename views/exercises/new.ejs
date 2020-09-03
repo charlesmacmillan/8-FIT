@@ -1,13 +1,16 @@
 <%- include('../partials/header') %>
-
-<img class="profile-pic" src="<%= user.avatar %>" alt="profile pic" />
-<h1><%= user.name %></h1>
-<form action="/workouts" method="POST">
-    <input type="text" name="exercise" placeholder="exercise name"/>
-    <input type="text" name="sets" placeholder="sets"/>
-    <input type="text" name="reps" placeholder="reps"/>
-    <input type="text" name="description" placeholder="description"/>
-    <button type="submit">Add Workout</button>
+<div class="flex box">
+  <img class="profile-pic" src="<%= user.avatar %>" alt="profile pic" />
+  <div class="inner-space">
+    <h1><%= user.name %></h1>
+  </div>
+</div>
+<form action="/routines/<%= routine._id %>/exercises" method="POST" class="center-text">
+  <input type="text" name="exercise" placeholder="exercise name" />
+  <input type="text" name="sets" placeholder="sets" /><br />
+  <input type="text" name="reps" placeholder="reps" />
+  <input type="text" name="description" placeholder="description" /><br />
+  <button type="submit" style="margin-left: ">Add Workout</button>
 </form>
 
 <%- include('../partials/footer') %>

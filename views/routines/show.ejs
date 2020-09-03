@@ -3,30 +3,34 @@
   <img class="profile-pic" src="<%= user.avatar %>" alt="profile pic" />
   <div class="inner-space">
     <h1><%= user.name %></h1>
+    <h2><%= routine.title %></h2>
+  </div>
+</div>
+<div class="flex center">
+  <div class="center-text">
+    <table>
+      <thead>
+        <% if (routine.exercises.length) { %>
+        <tr>
+          <th>Exercise</th>
+          <th>Sets</th>
+          <th>Reps</th>
+        </tr>
+      </thead>
+      <% routine.exercises.forEach(function(e) { %>
+      <tbody>
+        <tr>
+          <td><%= e.exercise %></td>
+          <td><%= e.sets %></td>
+          <td><%= e.reps %></td>
+          <% }) %>
+        </tr>
+        <% } else { %>
+        <p>No Exercises Added Yet</p>
+        <% } %>
+      </tbody>
+    </table>
     <a href="/exercises/new">Add Exercise</a>
   </div>
 </div>
-
-<table>
-  <thead>
-    <% if (routine.exercises.length) { %>
-    <tr>
-      <th>Exercise</th>
-      <th>Sets</th>
-      <th>Reps</th>
-    </tr>
-  </thead>
-  <% routine.exercises.forEach(function(e) { %>
-  <tbody>
-    <tr>
-      <td><%= e.exercise %></td>
-      <td><%= e.sets %></td>
-      <td><%= e.reps %></td>
-      <% }) %>
-    </tr>
-    <% } else { %> 
-     <p>No Exercises Added Yet</p>
-    <% } %>
-  </tbody>
-</table>
 <%- include('../partials/footer') %>

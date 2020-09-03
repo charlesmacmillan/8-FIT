@@ -15,8 +15,7 @@ function newRoutine(req, res) {
 
 function show(req, res) {
     Routine.findById(req.params.id, function (err, routine) {
-        console.log('routine', routine);
-        res.render('routines/show', routine);
+        res.render('routines/show', { routine: routine });
     });
 }
 

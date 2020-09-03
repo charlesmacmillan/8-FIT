@@ -24,9 +24,9 @@ function create(req, res) {
 }
 
 function deleteExercise(req, res) {
-    Routine.findById(req.params.routine, function (err, routine) {
+    Routine.findById(req.params.rid, function (err, routine) {
         const idx = routine.exercises.findIndex(
-            (exer) => req.params.exer == exer._id
+            (exer) => req.params.idz  == exer._id
         );
         routine.exercises.splice(idx, 1);
         routine.save(function (err) {

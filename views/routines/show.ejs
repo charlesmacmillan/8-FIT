@@ -2,8 +2,12 @@
 <div id="user" class="flex box">
   <img class="profile-pic" src="<%= user.avatar %>" alt="profile pic" />
   <div class="inner-space">
-    <h1><%= user.name %></h1>
-    <h2><%= routine.title %></h2>
+    <h1 style="margin-top: 0;"><%= user.name %></h1>
+    <span class="flex align">
+      <h2 style="margin: 0;"><%= routine.title %></h2>
+      &nbsp; &nbsp; <a href="/users/<%= locals.userId %>">Back</a>
+    </span>
+    <p>Exercises</p>
   </div>
 </div>
 <div class="column center">
@@ -13,10 +17,14 @@
       <% routine.exercises.forEach(function(e) { %>
       <li style="color: red">
         <span style="color: rgb(180, 180, 180)"><%= e.exercise %></span><br />
-        <%= e.sets %> sets / <%= e.reps %> reps</li>
-        <form action="/routines/<%= routine._id %>/<%= e._id %>?_method=DELETE" method="POST">
-            <button class="delete-btn" type="submit">X</button>
-        </form>
+        <%= e.sets %> sets / <%= e.reps %>
+      </li>
+      <form
+        action="/routines/<%= routine._id %>/<%= e._id %>?_method=DELETE"
+        method="POST"
+      >
+        <button class="delete-btn" type="submit">X</button>
+      </form>
       <% }) %>
     </ul>
     <% } else { %>

@@ -1,5 +1,19 @@
 <%- include('../partials/header') %>
 
-
+<div id="user" class="flex box">
+  <img class="profile-pic" src="<%= user.avatar %>" alt="profile pic" />
+  <div class="inner-space">
+    <h1><%= user.name %></h1>
+    <span class="flex align" style="margin-bottom: 10px;">
+      <p style="margin: 0;">Edit Routine Name</p>
+      <!-- <h2 style="margin: 0;"><%= routine.title %></h2> -->
+      &nbsp; &nbsp; <a href="/users/<%= locals.userId %>">Back</a>
+    </span>
+    <form action="/users/<%= user.id %>/routines" method="POST">
+      <input type="text" name="title" value="<%= routine.title %>" />
+      <button type="submit">UPDATE</button>
+    </form>
+  </div>
+</div>
 
 <%- include('../partials/footer') %>

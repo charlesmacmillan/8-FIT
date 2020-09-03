@@ -3,7 +3,11 @@
   <img class="profile-pic" src="<%= user.avatar %>" alt="profile pic" />
   <div class="inner-space">
     <h1><%= user.name %></h1>
-    <p>Name your Routine</p>
+    <div class="flex">
+      <p>Name your Routine</p>
+      &nbsp;&nbsp;|&nbsp;&nbsp;
+      <a href="/users/<%= locals.userId %>">Back</a>
+    </div>
     <form action="/users/<%= user.id %>/routines" method="POST">
       <input type="text" name="title" placeholder="routine name" />
       <button type="submit">Add Routine</button>

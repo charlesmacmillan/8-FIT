@@ -6,31 +6,27 @@
     <h2><%= routine.title %></h2>
   </div>
 </div>
-<div class="flex center">
+<div class="column center">
   <div class="center-text">
-    <table>
-      <thead>
-        <% if (routine.exercises.length) { %>
-        <tr>
-          <th>Exercise</th>
-          <th>Sets</th>
-          <th>Reps</th>
-        </tr>
-      </thead>
+    <% if (routine.exercises.length) { %>
+    <ul>
       <% routine.exercises.forEach(function(e) { %>
-      <tbody>
-        <tr>
-          <td><%= e.exercise %></td>
-          <td><%= e.sets %></td>
-          <td><%= e.reps %></td>
-          <% }) %>
-        </tr>
-        <% } else { %>
-        <p>No Exercises Added Yet</p>
-        <% } %>
-      </tbody>
-    </table>
-    <a href="/exercises/new">Add Exercise</a>
+      <li><span><%= e.exercise %></span><br /><%= e.sets %> sets /<%= e.reps %> reps</li>
+      <% }) %>
+    </ul>
+    <% } else { %>
+    <p>No Exercises Added Yet</p>
+    <% } %>
+    <form
+      action="/routines/<%= routine._id %>/exercises"
+      method="POST"
+      class="column"
+    >
+      <input type="text" name="exercise" placeholder="exercise name" />
+      <input type="text" name="sets" placeholder="sets" />
+      <input type="text" name="reps" placeholder="reps" />
+      <button type="submit">Add Exercise</button>
+    </form>
   </div>
 </div>
 <%- include('../partials/footer') %>

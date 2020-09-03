@@ -3,8 +3,8 @@ const Schema = mongoose.Schema;
 
 const exerciseSchema = {
   exercise: String,
-  sets: Number,
-  reps: Number,
+  sets: String,
+  reps: String,
   description: String,
 };
 

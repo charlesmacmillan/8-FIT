@@ -27,6 +27,17 @@ header nav {
   align-items: center;
 }
 
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li span {
+  font-size: 1.2rem;
+  text-decoration: underline;
+  color: rgb(189, 0, 0);
+}
+
 #dumbbell {
   width: 150px;
   z-index: -1;
@@ -47,10 +58,17 @@ header nav {
 .flex {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
 }
 
 .center {
   justify-content: center;
+  align-items: center;
 }
 
 .center-text {
@@ -79,9 +97,9 @@ header nav {
 }
 
 .routine {
-  padding: 10px;
-  margin: 0 15px;
-  /* border: 2px solid rgba(143, 0, 0, 0.336); */
+  padding: 15px;
+  margin: 10px 15px;
+  border: 4px dashed rgb(143, 0, 0);
   border-radius: 5px;
 }
 
@@ -93,4 +111,13 @@ footer {
   padding-bottom: 1%;
   height: 100px;
   margin-top: 10%;
+}
+
+@media only screen and (max-width: 700px) {
+  #user h1 {
+    font-size: 100%;
+  }
+  body{
+    margin: 0;
+  }
 }

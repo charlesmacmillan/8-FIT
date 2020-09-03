@@ -1,6 +1,6 @@
 <%- include('../partials/header') %>
 
-<div class="flex box">
+<div id="user"class="flex box">
   <img class="profile-pic" src="<%= user.avatar %>" alt="profile pic" />
   <div class="inner-space">
     <h1><%= user.name %></h1>
@@ -13,8 +13,12 @@
   <% routines.forEach(function(r) { %>
   <div class="routine center-text">
     <h2 style="text-decoration: underline; margin: 0"><%= r.title %></h2>
-    <p style="font-size: 12px"><%= r.description %></p>
-    <a href="/routines/<%= r._id %>">View Routine</a>
+    <!-- <ul>
+    <% r.exercises.forEach(function(e) { %> 
+    <li><span><%= e.exercise %></span><br /><%= e.sets %> sets / <%= e.reps %> reps </li>
+    <% }) %>
+    </ul> -->
+    <a href="/routines/<%= r._id %>">View Exercises</a>
   </div>
   <% }) %>
 </div>

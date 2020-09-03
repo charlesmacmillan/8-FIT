@@ -16,6 +16,9 @@ function newExercise(req, res) {
 
 function create(req, res) {
   Routine.findById(req.params.id, function (err, routine) {
+    if (!routine.user.equals(req.user.id)) {
+      return res.redirect(`/routines/${routine.id}`);
+    }
     routine.exercises.push(req.body);
     routine.save(function (err) {
       res.redirect(`/routines/${routine._id}`);
@@ -24,13 +27,16 @@ function create(req, res) {
 }
 
 function deleteExercise(req, res) {
-    Routine.findById(req.params.rid, function (err, routine) {
-        const idx = routine.exercises.findIndex(
-            (exer) => req.params.idz  == exer._id
-        );
-        routine.exercises.splice(idx, 1);
-        routine.save(function (err) {
-            res.redirect(`/routines/${routine._id}`)
-        });
+  Routine.findById(req.params.rid, function (err, routine) {
+    if (!routine.user.equals(req.user.id)) {
+      return res.redirect(`/routines/${routine.id}`);
+    }
+    const idx = routine.exercises.findIndex(
+      (exer) => req.params.idz == exer._id
+    );
+    routine.exercises.splice(idx, 1);
+    routine.save(function (err) {
+      res.redirect(`/routines/${routine._id}`);
     });
+  });
 }

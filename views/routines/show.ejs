@@ -1,11 +1,13 @@
 <%- include('../partials/header') %>
-<div id="user" class="flex box">
+<div id="user" class="flex box center center-text">
+  <% if (routine.user == locals.userId) { %>
   <img class="profile-pic" src="<%= user.avatar %>" alt="profile pic" />
+  <% } %>
   <div class="inner-space">
     <h1 style="margin-top: 0;"><%= user.name %></h1>
-    <span class="flex align">
+    <span class="flex align center">
       <h2 style="margin: 0;"><%= routine.title %></h2>
-      &nbsp; &nbsp; <a href="/users/<%= locals.userId %>">Back</a>
+      &nbsp; &nbsp; <a href="/users/<%= routine.user %>">Back</a>
     </span>
     <p>Exercises</p>
   </div>

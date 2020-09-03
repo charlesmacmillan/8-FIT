@@ -3,10 +3,9 @@
   <img class="profile-pic" src="<%= user.avatar %>" alt="profile pic" />
   <div class="inner-space">
     <h1><%= user.name %></h1>
-    <p>Name your Routine, and give a brief description ( Cardio, Leg Day, etc. )</p>
+    <p>Name your Routine</p>
     <form action="/users/<%= user.id %>/routines" method="POST">
       <input type="text" name="title" placeholder="routine name" />
-      <input type="text" name="description" placeholder="description" />
       <button type="submit">Add Routine</button>
     </form>
   </div>

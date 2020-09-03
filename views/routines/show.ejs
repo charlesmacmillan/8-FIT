@@ -1,5 +1,5 @@
 <%- include('../partials/header') %>
-<div class="flex box">
+<div id="user" class="flex box">
   <img class="profile-pic" src="<%= user.avatar %>" alt="profile pic" />
   <div class="inner-space">
     <h1><%= user.name %></h1>
@@ -11,7 +11,7 @@
     <% if (routine.exercises.length) { %>
     <ul>
       <% routine.exercises.forEach(function(e) { %>
-      <li><span><%= e.exercise %></span><br /><%= e.sets %> sets /<%= e.reps %> reps</li>
+      <li style= "color: red;"><span style= "color: rgb(180, 180, 180);"><%= e.exercise %></span><br /><%= e.sets %> sets /<%= e.reps %> reps</li>
       <% }) %>
     </ul>
     <% } else { %>

@@ -22,7 +22,6 @@ function index(req, res, next) {
 
 function show(req, res) {
     User.findById(req.params.id, function (err, user) {
-        console.log(user);
         Routine.find({ user: user._id }, function (err, routines) {
             res.render('users/show', { user, routines });            
         })

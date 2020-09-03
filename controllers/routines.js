@@ -1,10 +1,12 @@
 const User = require("../models/user");
 const Routine = require("../models/routine");
+const user = require("../models/user");
 
 module.exports = {
   new: newRoutine,
   show,
-  create
+  create,
+  delete: deleteRoutine,
 };
 
 function newRoutine(req, res) {
@@ -14,9 +16,9 @@ function newRoutine(req, res) {
 }
 
 function show(req, res) {
-    Routine.findById(req.params.id, function (err, routine) {
-        res.render('routines/show', { routine: routine });
-    });
+  Routine.findById(req.params.id, function (err, routine) {
+    res.render("routines/show", { routine: routine });
+  });
 }
 
 function create(req, res) {
@@ -30,4 +32,12 @@ function create(req, res) {
       res.redirect(`/users/${user._id}`);
     });
   });
+}
+
+function deleteRoutine(req, res) {
+    Routine.findByIdAndDelete(req.params.id, function (err, routine) {
+        console.log('params', routine)
+        routine.save();
+        res.redirect(`/users/${req.user.id}`);
+    })
 }

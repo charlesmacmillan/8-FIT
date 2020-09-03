@@ -3,6 +3,7 @@ const routinesCtrl = require("../controllers/routines");
 
 router.get("/routines/new", isLoggedIn, routinesCtrl.new);
 router.get("/routines/:id", isLoggedIn, routinesCtrl.show);
+router.get('/routines/:id/edit', isLoggedIn, routinesCtrl.edit);
 router.post("/users/:id/routines", isLoggedIn, routinesCtrl.create);
 router.delete('/routines/:id', isLoggedIn, routinesCtrl.delete);
 

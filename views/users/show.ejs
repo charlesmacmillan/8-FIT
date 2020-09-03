@@ -17,11 +17,11 @@
       <form action="/routines/<%= r._id %>" method="GET">
         <button class="details-btn">...</button>
       </form>
-      <form
-        action="/routines/<%= r._id %>?_method=DELETE"
-        method="POST"
-      >
+      <form action="/routines/<%= r._id %>?_method=DELETE" method="POST">
         <button class="delete-btn" type="submit">X</button>
+      </form>
+      <form action="/routines/<%= r._id %>/edit" method="GET">
+        <button class="edit-btn">edit</button>
       </form>
     </span>
   </div>

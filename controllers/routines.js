@@ -7,6 +7,7 @@ module.exports = {
   show,
   create,
   delete: deleteRoutine,
+  edit,
 };
 
 function newRoutine(req, res) {
@@ -35,9 +36,16 @@ function create(req, res) {
 }
 
 function deleteRoutine(req, res) {
-    Routine.findByIdAndDelete(req.params.id, function (err, routine) {
-        console.log('params', routine)
-        routine.save();
-        res.redirect(`/users/${req.user.id}`);
-    })
+  Routine.findByIdAndDelete(req.params.id, function (err, routine) {
+    routine.save();
+    res.redirect(`/users/${req.user.id}`);
+  });
+}
+
+function edit(req, res) {
+  Routine.findById(req.params.id, function (err, routine) {
+    if (!book.user.equals(req.user.id))
+      return res.redirect(`/users/${req.user.id}`);
+    res.render("routines/edit", { routine });
+  });
 }

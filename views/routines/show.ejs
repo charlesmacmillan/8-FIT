@@ -11,7 +11,12 @@
     <% if (routine.exercises.length) { %>
     <ul>
       <% routine.exercises.forEach(function(e) { %>
-      <li style= "color: red;"><span style= "color: rgb(180, 180, 180);"><%= e.exercise %></span><br /><%= e.sets %> sets /<%= e.reps %> reps</li>
+      <li style="color: red">
+        <span style="color: rgb(180, 180, 180)"><%= e.exercise %></span><br />
+        <%= e.sets %> sets / <%= e.reps %> reps</li>
+        <form action="/routines/<%= routine._id %>/<%= e._id %>?_method=DELETE" method="POST">
+            <button class="delete-btn" type="submit">X</button>
+        </form>
       <% }) %>
     </ul>
     <% } else { %>

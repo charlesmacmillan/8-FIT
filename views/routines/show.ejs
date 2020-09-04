@@ -4,12 +4,10 @@
   <img class="profile-pic" src="<%= user.avatar %>" alt="profile pic" />
   <% } %>
   <div class="inner-space">
-    <h1 style="margin-top: 0;"><%= user.name %></h1>
-    <span class="flex align center">
-      <h2 style="margin: 0;"><%= routine.title %></h2>
-      &nbsp; &nbsp; <a href="/users/<%= routine.user %>">Back</a>
-    </span>
-    <p>Exercises</p>
+    <h1 style="margin-bottom: 10px"><%= user.name %></h1>
+    <h2 style="margin: 0"><%= routine.title %></h2>
+    <p style="margin: 10px 0 10px">Exercises</p>
+    <a href="/users/<%= routine.user %>">Back</a>
   </div>
 </div>
 <div class="column center">
@@ -21,12 +19,17 @@
         <span style="color: rgb(180, 180, 180)"><%= e.exercise %></span><br />
         <%= e.sets %> sets / <%= e.reps %>
       </li>
-      <form
-        action="/routines/<%= routine._id %>/<%= e._id %>?_method=DELETE"
-        method="POST"
-      >
-        <button class="delete-btn" type="submit">X</button>
-      </form>
+      <div class="flex center">
+        <form
+          action="/routines/<%= routine._id %>/<%= e._id %>?_method=DELETE"
+          method="POST"
+        >
+          <button class="delete-btn" type="submit">X</button>
+        </form>
+        <form action="/exercises/<%= e._id %>/edit" method="GET">
+          <button class="edit-btn">edit</button>
+        </form>
+      </div>
       <% }) %>
     </ul>
     <% } else { %>
@@ -36,11 +39,12 @@
       action="/routines/<%= routine._id %>/exercises"
       method="POST"
       class="column"
+      style="width: 50%; margin: 0 auto;"
     >
       <input type="text" name="exercise" placeholder="exercise name" />
       <input type="text" name="sets" placeholder="sets" />
       <input type="text" name="reps" placeholder="reps" />
-      <button type="submit">Add Exercise</button>
+      <button type="submit">ADD EXERCISE</button>
     </form>
   </div>
 </div>

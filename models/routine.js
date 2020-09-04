@@ -13,7 +13,6 @@ const routineSchema = {
   description: String,
   exercises: [exerciseSchema],
   user: { type: Schema.Types.ObjectId, ref: "User" },
-  avatar: { type: Schema.Types.ObjectId, ref: "User" },
 };
 
 module.exports = mongoose.model("Routine", routineSchema);

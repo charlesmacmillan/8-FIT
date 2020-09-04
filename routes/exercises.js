@@ -2,8 +2,9 @@ const router = require("express").Router();
 const exercisesCtrl = require("../controllers/exercises");
 const exercises = require("../controllers/exercises");
 
-router.get('/exercises/new', isLoggedIn, exercisesCtrl.new);
+router.get('/exercises/:id/edit', isLoggedIn, exercisesCtrl.edit);
 router.post('/routines/:id/exercises', isLoggedIn, exercisesCtrl.create);
+router.put('/exercises/:id', isLoggedIn, exercisesCtrl.update);
 router.delete('/routines/:rid/:eid', isLoggedIn, exercisesCtrl.delete);
 
 function isLoggedIn(req, res, next) {

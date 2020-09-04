@@ -84,7 +84,11 @@ li span {
   height: 150px;
   margin: 15px 0;
   padding: 15px;
-  background: linear-gradient(to left, rgba(177, 60, 60, 0.5) 10%, rgba(143, 0, 0, 0.658));
+  background: linear-gradient(
+    to left,
+    rgba(177, 60, 60, 0.5) 10%,
+    rgba(143, 0, 0, 0.658)
+  );
   border: 2px solid white;
   border-radius: 150px;
 }
@@ -121,7 +125,7 @@ footer {
   #user h2 {
     font-size: 100%;
   }
-  body{
+  body {
     margin: 0;
   }
 }

@@ -9,7 +9,7 @@
       <!-- <h2 style="margin: 0;"><%= routine.title %></h2> -->
       &nbsp; &nbsp; <a href="/users/<%= locals.userId %>">Back</a>
     </span>
-    <form action="/users/<%= user.id %>/routines" method="POST">
+    <form action="/routines/<%= routine.id %>?_method=PUT" method="POST">
       <input type="text" name="title" value="<%= routine.title %>" />
       <button type="submit">UPDATE</button>
     </form>

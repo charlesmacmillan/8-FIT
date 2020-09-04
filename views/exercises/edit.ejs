@@ -1,0 +1,21 @@
+<%- include('../partials/header') %>
+<div class="flex box">
+  <img class="profile-pic" src="<%= user.avatar %>" alt="profile pic" />
+  <div class="inner-space">
+    <h1><%= user.name %></h1>
+  </div>
+</div>
+
+<form
+  action="/exercises/<%= exercise._id %>?_method=PUT"
+  method="POST"
+  class="column"
+  style="width: 50%; margin: 0 auto"
+>
+  <input type="text" name="exercise" value="<%= exercise.exercise %>" />
+  <input type="text" name="sets" value="<%= exercise.sets %>" />
+  <input type="text" name="reps" value="<%= exercise.reps %>" />
+  <button type="submit">UPDATE</button>
+</form>
+
+<%- include('../partials/footer') %>

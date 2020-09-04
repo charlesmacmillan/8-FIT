@@ -19,8 +19,8 @@ function newRoutine(req, res) {
 
 function show(req, res) {
   Routine.findById(req.params.id, function (err, routine) {
-    console.log('logged in user', req.user._id);
-    console.log('profile user', routine.user);
+    console.log("logged in user", req.user._id);
+    console.log("profile user", routine.user);
     res.render("routines/show", { routine: routine });
   });
 }
@@ -52,15 +52,16 @@ function deleteRoutine(req, res) {
 
 function edit(req, res) {
   Routine.findById(req.params.id, function (err, routine) {
-    console.log(req.params.id);
-    if (!routine.user.equals(req.user.id))
+    if (!routine.user.equals(req.user.id)) {
       return res.redirect(`/users/${routine.user}`);
+    }
     res.render("routines/edit", { routine: routine });
   });
 }
 
 function update(req, res) {
-  Routine.findById(req.params.id, function (err, routine) {
-    
+  Routine.findByIdAndUpdate(req.params.id, req.body, function (err, routine) {
+    res.redirect(`/users/${routine.user}`);
   });
 }
+

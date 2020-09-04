@@ -3,6 +3,8 @@
   <img class="profile-pic" src="<%= user.avatar %>" alt="profile pic" />
   <div class="inner-space">
     <h1><%= user.name %></h1>
+    <p>Edit your exercise, then click 'UPDATE'</p>
+    <a href="/routines/<%= routine._id %>">Back</a>
   </div>
 </div>
 
@@ -15,7 +17,7 @@
   <input type="text" name="exercise" value="<%= exercise.exercise %>" />
   <input type="text" name="sets" value="<%= exercise.sets %>" />
   <input type="text" name="reps" value="<%= exercise.reps %>" />
-  <button type="submit">UPDATE</button>
+  <button class="update-btn" type="submit">UPDATE</button>
 </form>
 
 <%- include('../partials/footer') %>

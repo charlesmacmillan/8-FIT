@@ -152,6 +152,16 @@ input {
   color: grey;
 }
 
+.add-exercise-btn {
+  padding: 5px;
+  border: 2px solid grey;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: bolder;
+  color: grey;
+  background-color: aquamarine;
+}
+
 .details-btn,
 .delete-btn,
 .edit-btn {

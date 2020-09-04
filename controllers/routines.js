@@ -19,7 +19,7 @@ function newRoutine(req, res) {
 
 function show(req, res) {
   Routine.findById(req.params.id, function (err, routine) {
-    res.render("routines/show", { routine: routine });
+    res.render("routines/show", { routine: routine});
   });
 }
 
@@ -62,4 +62,3 @@ function update(req, res) {
     res.redirect(`/users/${routine.user}`);
   });
 }
-

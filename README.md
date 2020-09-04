@@ -17,7 +17,7 @@
 
 ## <ins>Getting Started
 Click on the '8FIT' link to go to the app, or the 'Trello' link to view some of my project's planning page
-> - [8FIT](https://fit-eightfit.herokuapp.com/routines/5f5162433a4a1c0eb329790a?)
+> - [8FIT](https://fit-eightfit.herokuapp.com/)
 > - [Trello](https://trello.com/b/PFOEuodj/8fit)
 
 ## <ins>Next Steps

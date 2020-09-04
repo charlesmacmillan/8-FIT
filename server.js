@@ -6,6 +6,7 @@ const cookieParser = require('cookie-parser');
 const session = require('express-session');
 const passport = require('passport');
 const methodOverride = require('method-override');
+const favicon = require('express-favicon');
 
 require('dotenv').config();
 
@@ -20,6 +21,7 @@ const exercisesRouter = require('./routes/exercises');
 const app = express();
 
 // view engine setup
+app.use(favicon(__dirname + '/images/8fitred.png'));
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 

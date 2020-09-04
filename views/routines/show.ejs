@@ -1,8 +1,11 @@
 <%- include('../partials/header') %>
 <div id="user" class="flex box center center-text">
-  <% if (routine.user == locals.userId) { %>
-  <img class="profile-pic" src="<%= user.avatar %>" alt="profile pic" />
-  <% } %>
+  <img
+    class="profile-pic"
+    src="https://i.imgur.com/MOK85RO.png"
+    alt="profile pic"
+    style="border: 0px;"
+  />
   <div class="inner-space">
     <h1 style="margin-bottom: 10px"><%= user.name %></h1>
     <h2 style="margin: 0"><%= routine.title %></h2>
@@ -10,16 +13,16 @@
     <a href="/users/<%= routine.user %>">Back</a>
   </div>
 </div>
-<div class="column center">
+<div class="console column center">
   <div class="center-text">
     <% if (routine.exercises.length) { %>
-    <ul>
+    <ul style="color: red">
       <% routine.exercises.forEach(function(e) { %>
-      <li style="color: red">
-        <span style="color: rgb(180, 180, 180)"><%= e.exercise %></span><br />
-        <%= e.sets %> sets / <%= e.reps %>
-      </li>
-      <div class="flex center">
+      <li ><span style="color: rgb(180, 180, 180)"><%= e.exercise %></span></li>
+        <li><span style="color: rgb(255, 100, 100);">Sets:</span>&nbsp;&nbsp;&nbsp; <%= e.sets %></li>
+        <li><span style="color: rgb(255, 100, 100);">Reps:</span>&nbsp;&nbsp;&nbsp;<%= e.reps %></li>
+        <% if(routine.user.equals(user && user._id)) { %>
+        <div class="flex center">
         <form
           action="/routines/<%= routine._id %>/<%= e._id %>?_method=DELETE"
           method="POST"
@@ -30,22 +33,23 @@
           <button class="edit-btn">edit</button>
         </form>
       </div>
-      <% }) %>
+      <% } %> <% }) %>
     </ul>
     <% } else { %>
     <p>No Exercises Added Yet</p>
-    <% } %>
+    <% } %> <% if(routine.user.equals(user && user._id)) { %>
     <form
       action="/routines/<%= routine._id %>/exercises"
       method="POST"
       class="column"
-      style="width: 50%; margin: 0 auto;"
+      style="width: 50%; margin: 0 auto"
     >
       <input type="text" name="exercise" placeholder="exercise name" />
       <input type="text" name="sets" placeholder="sets" />
       <input type="text" name="reps" placeholder="reps" />
       <button type="submit">ADD EXERCISE</button>
     </form>
+    <% } %>
   </div>
 </div>
 <%- include('../partials/footer') %>

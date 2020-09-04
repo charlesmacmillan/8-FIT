@@ -6,6 +6,7 @@ const exerciseSchema = {
   sets: String,
   reps: String,
   description: String,
+  user: { type: Schema.Types.ObjectId, ref: "User" },
 };
 
 const routineSchema = {

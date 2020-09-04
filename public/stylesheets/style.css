@@ -1,9 +1,11 @@
 body {
-  margin: 0 50px;
-  /* padding: 50px; */
+  margin: 25px;
+  padding: 0 15px;
   color: rgb(245, 245, 245);
   font-family: "Orbitron", sans-serif;
   background-color: black;
+  border: 5px dashed rgb(88, 88, 88);
+  border-radius: 25px;
 }
 
 a {
@@ -16,7 +18,7 @@ a:hover {
 }
 
 header {
-  margin: 50px 0;
+  margin: 50px 0 25px;
 }
 
 header nav {
@@ -27,13 +29,25 @@ header nav {
   align-items: center;
 }
 
+main {
+  background: linear-gradient(to top, rgb(44, 44, 44) 0%, rgba(23, 0, 61, 0.486));
+  padding: 50px 25px;
+  border-radius: 50px;
+  border: 5px dashed yellow;
+}
+
 h1 {
   margin-top: 0;
+}
+
+h2 {
+  font-size: 1.6rem;
 }
 
 ul {
   list-style: none;
   padding: 0;
+  font-size: 22px;
 }
 
 li span {
@@ -85,11 +99,12 @@ li span {
   margin: 15px 0;
   padding: 15px;
   background: linear-gradient(
-    to left,
-    rgba(177, 60, 60, 0.5) 10%,
-    rgba(143, 0, 0, 0.658)
+    to right,
+    black 10%,
+    #8f0000a8 ,
+    black
   );
-  border: 2px solid white;
+  border: 5px solid rgb(156, 156, 156);
   border-radius: 150px;
 }
 
@@ -100,14 +115,52 @@ li span {
 .profile-pic {
   width: 150px;
   border-radius: 50%;
-  border: 2px solid rgb(255, 255, 255);
+  border: 2px solid rgb(77, 77, 77);
+}
+
+.console {
+  background-color: rgba(0, 0, 0, 0.473);
+  border: 8px solid black;
+  border-radius: 10px;
+  padding: 25px 0;
+  margin: 25px 5% 0;
 }
 
 .routine {
-  padding: 15px;
-  margin: 10px 15px;
+  padding: 20px 10px 15px;
+  margin: 10px 5px;
+  background-color: rgba(0, 0, 0, 0.541);
   border: 4px dashed rgb(143, 0, 0);
-  border-radius: 5px;
+  border-radius: 10px;
+}
+
+.details-btn,
+.delete-btn,
+.edit-btn {
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  color: rgb(66, 66, 66);
+  font-weight: bolder;
+  margin: 10px 5px 0;
+}
+
+.details-btn {
+  background-color: green;
+  padding: 0 0 8px;
+  text-align: center;
+  font-size: 1.05rem;
+  font-weight: bolder;
+}
+
+.delete-btn {
+  background-color: red;
+  font-size: 1.1rem;
+  
+}
+
+.edit-btn {
+  background-color: blue;
 }
 
 footer {
@@ -121,8 +174,8 @@ footer {
 }
 
 @media only screen and (max-width: 700px) {
-  #user h1,
-  #user h2 {
+  h1,
+  h2 {
     font-size: 100%;
   }
   body {

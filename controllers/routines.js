@@ -19,8 +19,6 @@ function newRoutine(req, res) {
 
 function show(req, res) {
   Routine.findById(req.params.id, function (err, routine) {
-    console.log("logged in user", req.user._id);
-    console.log("profile user", routine.user);
     res.render("routines/show", { routine: routine });
   });
 }

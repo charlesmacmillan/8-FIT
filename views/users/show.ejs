@@ -5,27 +5,33 @@
   <div class="inner-space">
     <h1><%= user.name %></h1>
     <p>Routines</p>
+    <% if(user._id.equals(locals.userId)) { %>
     <a href="/routines/new">New Routine</a>
+    <% } %>
   </div>
 </div>
-
-<% if (routines) { %>
-<div class="flex center">
-  <% routines.forEach(function(r) { %>
-  <div class="routine center-text">
-    <h2 style="text-decoration: underline; margin: 0"><%= r.title %></h2>
-    <span class="flex center">
-      <form action="/routines/<%= r._id %>" method="GET">
-        <button class="details-btn">...</button>
-      </form>
-      <form action="/routines/<%= r._id %>?_method=DELETE" method="POST">
-        <button class="delete-btn" type="submit">X</button>
-      </form>
-      <form action="/routines/<%= r._id %>/edit" method="GET">
-        <button class="edit-btn">edit</button>
-      </form>
-    </span>
+<div class="console">
+  <% if (routines) { %>
+  <div class="flex center">
+    <% routines.forEach(function(r) { %>
+    <div class="routine center-text">
+      <h2 style="text-decoration: underline; margin: 0"><%= r.title %></h2>
+      <span class="flex center">
+        <form action="/routines/<%= r._id %>" method="GET">
+          <button class="details-btn">...</button>
+        </form>
+        <% if(r.user.equals(locals.userId)) { %>
+        <form action="/routines/<%= r._id %>?_method=DELETE" method="POST">
+          <button class="delete-btn" type="submit">X</button>
+        </form>
+        <form action="/routines/<%= r._id %>/edit" method="GET">
+          <button class="edit-btn">edit</button>
+        </form>
+      </span>
+      <% } %>
+    </div>
+    <% }) %>
   </div>
-  <% }) %>
 </div>
-<% } %> <%- include('../partials/footer') %>
+<% } %> 
+<%- include('../partials/footer') %>

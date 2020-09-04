@@ -2,9 +2,11 @@
 >An 8-bit themed exercise tracking app for the nerdy fitness enthusiast
 
 ## <ins>_**Screen Shots**_
-
+Explore Page
 <img src="https://i.imgur.com/AnNczZB.png">
+User Profile
 <img src="https://i.imgur.com/zrJfleP.png">
+Routine Details Page
 <img src="https://i.imgur.com/g9gdNDN.png">
 
 ## <ins>Technologies Used
